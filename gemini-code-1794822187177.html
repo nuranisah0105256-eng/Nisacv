@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nur Anisah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy-primary: #0f172a;     /* Biru Navy Gelap */
+            --navy-secondary: #1e293b;   /* Biru Navy Sedang */
+            --navy-accent: #3b82f6;      /* Biru Terang untuk Aksen */
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+            --bg-light: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Kolom Kiri (Sidebar Navy) */
+        .sidebar {
+            background-color: var(--navy-primary);
+            color: var(--text-light);
+            padding: 40px 30px;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--navy-accent);
+            margin-bottom: 15px;
+            background-color: var(--navy-secondary);
+        }
+
+        .profile-section h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .profile-section .role {
+            font-size: 14px;
+            color: #93c5fd;
+            font-weight: 500;
+        }
+
+        .sidebar-block {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--navy-accent);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+            font-size: 13.5px;
+            color: #cbd5e1;
+        }
+
+        .contact-list i {
+            width: 28px;
+            height: 28px;
+            background-color: var(--navy-secondary);
+            color: var(--navy-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .skill-item {
+            margin-bottom: 14px;
+        }
+
+        .skill-name {
+            font-size: 13.5px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            color: #e2e8f0;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 6px;
+            background-color: var(--navy-secondary);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background-color: var(--navy-accent);
+            border-radius: 3px;
+        }
+
+        /* Kolom Kanan (Konten Utama) */
+        .main-content {
+            padding: 45px 40px;
+        }
+
+        .content-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            color: var(--navy-primary);
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--navy-primary);
+            margin-bottom: 22px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--navy-accent);
+            border: 2px solid var(--navy-primary);
+        }
+
+        .timeline-title {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--navy-primary);
+        }
+
+        .timeline-subtitle {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--navy-accent);
+            margin-bottom: 4px;
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 8px;
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 13.5px;
+            color: #475569;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background-color: var(--navy-primary);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-print:hover {
+            background-color: var(--navy-accent);
+        }
+
+        /* Responsif untuk HP / Tablet */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 15px;
+            }
+            .main-content {
+                padding: 30px 25px;
+            }
+        }
+
+        /* Pengaturan saat di-Print / Save as PDF */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            .btn-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- BAGIAN KIRI (NAVY) -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <!-- Ganti 'src' di bawah ini dengan nama file foto Anda, misal: foto-nur.jpg -->
+                <img src="https://via.placeholder.com/150/1e293b/ffffff?text=Foto+Profil" alt="Foto Nur Anisah" class="profile-img">
+                <h1>Nur Anisah</h1>
+                <p class="role">Administrasi & Layanan Pelanggan</p>
+            </div>
+
+            <div class="sidebar-block">
+                <h2 class="sidebar-title">Kontak</h2>
+                <ul class="contact-list">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>0838-2243-4984</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>0838-2243-4984</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Medan, Sumatera Utara</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>nuranisah@email.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-block">
+                <h2 class="sidebar-title">Keahlian</h2>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Microsoft Office (Word, Excel)</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Komunikasi & Pelayanan</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Pengarsipan & Data Entry</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Manajemen Waktu</span></div>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                </div>
+            </div>
+
+            <div class="sidebar-block">
+                <h2 class="sidebar-title">Bahasa</h2>
+                <ul class="contact-list">
+                    <li><i class="fas fa-check"></i> Bahasa Indonesia (Aktif)</li>
+                    <li><i class="fas fa-check"></i> Bahasa Inggris (Dasar/Menengah)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- BAGIAN KANAN (UTAMA) -->
+        <main class="main-content">
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-user"></i> Tentang Saya</h2>
+                <p class="about-text">
+                    Saya adalah individu yang teliti, jujur, bertanggung jawab, dan memiliki kemampuan komunikasi yang baik. Berdomisili di Medan dan siap bekerja secara tim maupun individu. Memiliki motivasi tinggi untuk belajar hal baru serta berkontribusi secara maksimal dalam meningkatkan efisiensi dan kualitas pelayanan di perusahaan.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Pengalaman Kerja</h2>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Staf Administrasi / Kasir</h3>
+                    <div class="timeline-subtitle">Nama Perusahaan / Toko - Medan</div>
+                    <span class="timeline-date">2023 - Sekarang</span>
+                    <p class="timeline-desc">
+                        Mengelola pencatatan transaksi harian, menyusun laporan administrasi menggunakan Microsoft Excel, melayani pelanggan dengan ramah, serta menjaga kerapian arsip dokumen.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Praktek Kerja Lapangan (Magang)</h3>
+                    <div class="timeline-subtitle">Instansi / Perusahaan - Medan</div>
+                    <span class="timeline-date">2022</span>
+                    <p class="timeline-desc">
+                        Membantu proses input data, pengarsipan surat masuk dan keluar, serta mendukung kelancaran operasional harian tim administrasi.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Pendidikan</h2>
+                
+                <div class="timeline-item">
+                    <h3 class="timeline-title">SMA / SMK / Universitas (Sesuaikan)</h3>
+                    <div class="timeline-subtitle">Jurusan Administrasi Perkantoran / Umum - Medan</div>
+                    <span class="timeline-date">2019 - 2022</span>
+                    <p class="timeline-desc">
+                        Lulus dengan nilai baik dan aktif dalam kegiatan organisasi sekolah/kampus.
+                    </p>
+                </div>
+            </section>
+
+            <button class="btn-print" onclick="window.print()">
+                <i class="fas fa-download"></i> Simpan / Cetak CV (PDF)
+            </button>
+        </main>
+    </div>
+
+</body>
+</html>
